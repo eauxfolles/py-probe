@@ -11,4 +11,4 @@ Tool loads external file including names of domains (potentially identified via 
 Where: 
 - "list" is the name of a file including domains (without heading http:// or https:// (located in same folder as the tool)
 
-P.S. This tool is inspired by the work of Tom Hudson on httprobe (https://github.com/tomnomnom/httprobe).
+P.S. This tool is inspired by the work of Tom Hudson (https://github.com/tomnomnom) on httprobe (https://github.com/tomnomnom/httprobe).
