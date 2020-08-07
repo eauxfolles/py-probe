@@ -4,9 +4,11 @@
 
 PoC/Alpha of a tool written in Python which allows to check if domains (loaded from list) are resolving, i.e. are active.
 
-Function: Tool loads external file including names of domains (potentially identified via https://github.com/OWASP/Amass and similar tools) and probes if they are available.  
+Tool loads external file including names of domains (potentially identified via https://github.com/OWASP/Amass and similar tools) and probes if they are available. Tested under Windows. 
 
 ***Usage:*** "httpyprobe.py <list>"
 
 Where: 
 - "list" is the name of a file including domains (without heading http:// or https:// (located in same folder as the tool)
+
+P.S. This tool is inspired by the work of Tom Hudson on httprobe (https://github.com/tomnomnom/httprobe).
