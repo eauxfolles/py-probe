@@ -6,9 +6,10 @@ PoC/Alpha of a tool written in Python which allows to check if domains (loaded f
 
 Tool loads external file including names of domains (potentially identified via https://github.com/OWASP/Amass and similar tools) and probes if they are available. Tested under Windows. 
 
-***Usage:*** "httpyprobe.py <list>"
+***Usage:*** "httpyprobe.py <list> -t <number>"
 
 Where: 
 - "list" is the name of a file including domains without heading protocol as http:// or https:// (located in same folder as the tool)
+- "t" stands for threads and allows to define how many threads should be used for probing
 
 P.S. This tool is inspired by the work of Tom Hudson (https://github.com/tomnomnom) on httprobe (https://github.com/tomnomnom/httprobe).
