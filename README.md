@@ -9,6 +9,6 @@ Tool loads external file including names of domains (potentially identified via 
 ***Usage:*** "httpyprobe.py <list>"
 
 Where: 
-- "list" is the name of a file including domains (without heading http:// or https:// (located in same folder as the tool)
+- "list" is the name of a file including domains without heading protocol as http:// or https:// (located in same folder as the tool)
 
 P.S. This tool is inspired by the work of Tom Hudson (https://github.com/tomnomnom) on httprobe (https://github.com/tomnomnom/httprobe).
