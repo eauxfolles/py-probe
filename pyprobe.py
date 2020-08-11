@@ -71,7 +71,6 @@ def probe(single_entry, protocol):
 	except:
 		pass
 
-
 source_file, target_file = validate_command_line()
 source_list = load_list()
 
