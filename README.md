@@ -9,7 +9,7 @@ Tool loads external file including names of domains (potentially identified via 
 ***Usage:*** "pyprobe.py \<source> \<target>"
 
 Where: 
-* \<source> is the name of a file including domains without heading protocol as http:// or https:// (located in same folder as the tool)
-* \<target> 
+* \<source> is name of file including domains to be checked. No heading protocol (http:// or https://). Located in same folder as the script. 
+* \<target> is name of file to which validated list shoudl be written. 
 
 P.S. This tool is inspired by the work of Tom Hudson (https://github.com/tomnomnom) on httprobe (https://github.com/tomnomnom/httprobe).
