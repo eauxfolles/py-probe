@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # ==============================================================================
 # Name: pyprobe.py (Python Probe)
-# Version: v3 (alpha)
+# Version: v4 (alpha)
 # Author: eauxfolles
-# Date: 11.08.2020
+# Date: 12.08.2020
 # Description: Script to check if HTTP and HTTPS domains are resolving. 
 # Usage: "probe.py <source> <target>"
 # ==============================================================================
@@ -15,6 +15,7 @@ import requests
 source_file = False
 target_file = False
 source_list = []
+target_list = []
 process_list = []
 
 # function to validate input provided with command line (has to be 1 or 3 parameters or -help/--help)
@@ -49,19 +50,29 @@ def load_list():
 
 	return source_list
 
+# function to write validated entries to target-file
+def write_list(target_list):
+
+	with open(target_file, 'w') as f: 
+		for y in target_list:
+			f.write(y + '\n')
+
 # function to probe for http (port 80) and https (port 443) of each entry
 def probe(single_entry, protocol): 
 
 	single_entry_url = protocol + single_entry
 
 	try:
-		response = requests.get(single_entry_url, timeout=1, allow_redirects=False)
+		response = requests.get(single_entry_url, timeout=5, allow_redirects=False)
 		if response.status_code == 200: 
 			print(response.url + " resolved")
 		elif (response.status_code == 301) or (response.status_code == 302):
 			print(response.url + " redirected to " + str(response.headers['Location']))
+			response.url = response.headers['Location']
 		else: 
 			print(response.url + " caused " + response.status_code)
+		if response.url not in target_list:
+			target_list.append(response.url) 
 	except requests.Timeout:
 		print(single_entry_url + " request timed out")
 		pass
@@ -77,3 +88,5 @@ source_list = load_list()
 for i in source_list:
 	probe(i, "http://")
 	probe(i, "https://")
+
+write_list(target_list)
